@@ -1,0 +1,29 @@
+public class bai3 {
+    private int n;
+
+    public bai3(int n) {
+        this.n = n;
+    }
+    
+    public int giaithua(int m){
+        int giaithua = 1;
+        while(m>0){
+            giaithua *= m;
+            m--;
+        }
+        return giaithua;
+    }
+    public static void main(String[] args){
+        int m;
+        Scanner in = new Scanner(System.in);
+        m = in.nextInt();
+        bai3 n = new bai3(m);
+        float s = 0.0f;
+        
+        for(int i = 1; i<=m; i++){
+            
+            s += (float)1/n.giaithua(2*m-1);
+        }
+        System.out.println("tong la: " + s);
+    }
+}

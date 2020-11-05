@@ -1,0 +1,28 @@
+public class bai2 {
+    private int n;
+
+    public bai2(int n) {
+        this.n = n;
+    }
+    
+    public int giaithua(int m){
+        int giaithua = 1;
+        while(m>0){
+            giaithua *= m;
+            m--;
+        }
+        return giaithua;
+    }
+    public static void main(String[] args){
+        int m;
+        Scanner in = new Scanner(System.in);
+        m = in.nextInt();
+        bai2 n = new bai2(m);
+        double s = 15;
+        
+        for(int i = 1; i<=m; i++){
+            s += (double)Math.pow(-1, m)/(double)n.giaithua(m);
+        }
+        System.out.println("tong la: " + s);
+    }
+}
